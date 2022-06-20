@@ -1,26 +1,21 @@
 ﻿
-int count = 0;
+
+
+Console.WriteLine("Введите кол-во строк,которое собираетесь ввести:  " );
+int count=Convert.ToInt32(Console.ReadLine());
 string[] list = new string[count];
-string s;
-Console.WriteLine("Введите строки ( чтобы закончить ввод оставте пустую строку и нажмите энтер ) :");
-do
-{
-    s = Console.ReadLine();
+    
+      for (int i = 0; i <list.Length ; i++)
+        {
+        Console.WriteLine( "Введите строку  : ");
+        list [i] = Console.ReadLine();
+        
+        }
+     
 
-    if (s != "")
-    {
-        count++;
-        string[] list2 = new string[count];
-        for (int i = 0; i < list2.Length - 1; i++)
-
-            list2[i] = list[i];
-        list2[count - 1] = s;
-        list = list2;
-    }
-} while (s != "");
-Console.Write ("Строки , длинна которых меньше или равна 3 символа : ");
+ Console.WriteLine ("Строки , длинна которых меньше или равна 3 символа : ");
 for (int i = 0; i < list.Length; i++)
     if (list[i].Length != 0 && list[i].Length <= 3)
-        Console.Write( $" , {list[i]}");
+        Console.WriteLine( $"  { list[i]}");
 Console.ReadKey();
 
